@@ -1,0 +1,32 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+calculator-madeleineb,com.assignment.calculator_madeleineb,MainFrame.new ActionListener() {...},62,0,0,0,11,0,2,0,2,0
+calculator-madeleineb,com.assignment.calculator_madeleineb,MainFrameOpt.new ActionListener() {...},22,0,0,0,3,0,2,0,2,0
+calculator-madeleineb,com.assignment.calculator_madeleineb,MainFrame.new ActionListener() {...},62,0,0,0,11,0,2,0,2,0
+calculator-madeleineb,com.assignment.calculator_madeleineb,MainFrameOpt.new ActionListener() {...},22,0,0,0,3,0,2,0,2,0
+calculator-madeleineb,com.assignment.calculator_madeleineb,MainFrame.new ActionListener() {...},62,0,0,0,11,0,2,0,2,0
+calculator-madeleineb,com.assignment.calculator_madeleineb,MainFrameOpt.new ActionListener() {...},22,0,0,0,3,0,2,0,2,0
+calculator-madeleineb,com.assignment.calculator_madeleineb,MainFrame.new ActionListener() {...},62,0,0,0,11,0,2,0,2,0
+calculator-madeleineb,com.assignment.calculator_madeleineb,MainFrameOpt.new ActionListener() {...},22,0,0,0,3,0,2,0,2,0
+calculator-madeleineb,com.assignment.calculator_madeleineb,MainFrameOpt.new ActionListener() {...},22,0,0,0,3,0,2,0,2,0
+calculator-madeleineb,com.assignment.calculator_madeleineb,MainFrameOpt.new ActionListener() {...},38,0,0,0,5,0,2,0,2,0
+calculator-madeleineb,com.assignment.calculator_madeleineb,MainFrameOpt.new ActionListener() {...},22,0,0,0,3,0,2,0,2,0
+calculator-madeleineb,com.assignment.calculator_madeleineb,MainFrame.new Runnable() {...},16,0,0,0,7,0,2,0,2,0
+calculator-madeleineb,com.assignment.calculator_madeleineb,MainFrameOpt.new Runnable() {...},16,0,0,0,7,0,2,0,2,0
+calculator-madeleineb,com.assignment.calculator_madeleineb,MainFrame.new ActionListener() {...},50,0,0,0,10,0,2,0,2,0
+calculator-madeleineb,com.assignment.calculator_madeleineb,MainFrame.new ActionListener() {...},37,0,0,0,8,0,2,0,2,0
+calculator-madeleineb,com.assignment.calculator_madeleineb,MainFrame.new ActionListener() {...},50,0,0,0,10,0,2,0,2,0
+calculator-madeleineb,com.assignment.calculator_madeleineb,MainFrameOpt.new ActionListener() {...},22,0,0,0,3,0,2,0,2,0
+calculator-madeleineb,com.assignment.calculator_madeleineb,MainFrameOpt.new ActionListener() {...},22,0,0,0,3,0,2,0,2,0
+calculator-madeleineb,com.assignment.calculator_madeleineb,MainFrameOpt.new ActionListener() {...},22,0,0,0,3,0,2,0,2,0
+calculator-madeleineb,com.assignment.calculator_madeleineb,MainFrame,843,0,0,0,132,0,5,0,5,0
+calculator-madeleineb,com.assignment.calculator_madeleineb,MainFrameOpt.new ActionListener() {...},43,0,0,0,8,0,2,0,2,0
+calculator-madeleineb,com.assignment.calculator_madeleineb,MainFrameOpt.new ActionListener() {...},22,0,0,0,3,0,2,0,2,0
+calculator-madeleineb,com.assignment.calculator_madeleineb,MainFrameOpt,1101,0,0,0,159,0,5,0,5,0
+calculator-madeleineb,com.assignment.calculator_madeleineb,MainFrameOpt.new ActionListener() {...},17,0,0,0,4,0,2,0,2,0
+calculator-madeleineb,com.assignment.calculator_madeleineb,MainFrame.new ActionListener() {...},50,0,0,0,10,0,2,0,2,0
+calculator-madeleineb,com.assignment.calculator_madeleineb,MainFrame.new ActionListener() {...},50,0,0,0,10,0,2,0,2,0
+calculator-madeleineb,com.assignment.calculator_madeleineb,MainFrame.new ActionListener() {...},50,0,0,0,10,0,2,0,2,0
+calculator-madeleineb,com.assignment.calculator_madeleineb,MainFrame.new ActionListener() {...},50,0,0,0,10,0,2,0,2,0
+calculator-madeleineb,com.assignment.calculator_madeleineb,CalculatorBasic,0,47,0,4,0,13,0,7,0,5
+calculator-madeleineb,com.assignment.calculator_madeleineb,Main,14,0,0,0,4,0,2,0,2,0
+calculator-madeleineb,com.assignment.calculator_madeleineb,CalculatorAdvanced,0,63,0,0,0,7,0,7,0,7

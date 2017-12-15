@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MainFrame.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">calculator-madeleineb</a> &gt; <a href="index.source.html" class="el_package">com.assignment.calculator_madeleineb</a> &gt; <span class="el_source">MainFrame.java</span></div><h1>MainFrame.java</h1><pre class="source lang-java linenums">package com.assignment.calculator_madeleineb;
+
+import java.awt.EventQueue;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JTextField;
+import java.awt.Font;
+import java.awt.Insets;
+
+import javax.swing.JSeparator;
+
+public class MainFrame {
+
+<span class="nc" id="L18">	CalculatorBasic cb = new CalculatorBasic();</span>
+<span class="nc" id="L19">	CalculatorAdvanced ca = new CalculatorAdvanced();</span>
+
+	// Why do they get the property Final? Auto.
+	// Components Attributes
+<span class="nc" id="L23">	private JFrame frmMadbarCalculator = new JFrame();</span>
+<span class="nc" id="L24">	JSeparator separator = new JSeparator();</span>
+
+<span class="nc" id="L26">	private final JLabel lblPickNr = new JLabel(</span>
+			&quot;Fill the two fields below with two numbers you wish to operate&quot;);
+<span class="nc" id="L28">	private final JLabel lblOperation = new JLabel(</span>
+			&quot;Choose basic operation to perform to get result&quot;);
+<span class="nc" id="L30">	private final JLabel lblNrToRaise = new JLabel(</span>
+			&quot;...Or insert a number below to raise&quot;);
+<span class="nc" id="L32">	private final JLabel lblResult = new JLabel(&quot;Result: &quot;);</span>
+
+<span class="nc" id="L34">	private final JTextField textField1Nr = new JTextField();</span>
+<span class="nc" id="L35">	private final JTextField textField2Nr = new JTextField();</span>
+<span class="nc" id="L36">	private final JTextField textFieldResult = new JTextField();</span>
+<span class="nc" id="L37">	private final JTextField textFieldNrToRaise = new JTextField();</span>
+
+<span class="nc" id="L39">	private final JButton btnPlus = new JButton(&quot;+&quot;);</span>
+<span class="nc" id="L40">	private final JButton btnSubt = new JButton(&quot;-&quot;);</span>
+<span class="nc" id="L41">	private final JButton btnDivi = new JButton(&quot;/&quot;);</span>
+<span class="nc" id="L42">	private final JButton btnMult = new JButton(&quot;*&quot;);</span>
+
+<span class="nc" id="L44">	private final JButton btnPow2 = new JButton(&quot;x²&quot;);</span>
+<span class="nc" id="L45">	private final JButton btnPow3 = new JButton(&quot;x³&quot;);</span>
+<span class="nc" id="L46">	private final JButton btnPow4 = new JButton(&quot;x4&quot;);</span>
+<span class="nc" id="L47">	private final JButton btnPow5 = new JButton(&quot;x5&quot;);</span>
+<span class="nc" id="L48">	private final JButton btnPow6 = new JButton(&quot;x6&quot;);</span>
+<span class="nc" id="L49">	private final JButton btnPow7 = new JButton(&quot;x7&quot;);</span>
+
+<span class="nc" id="L51">	private final JButton btnReset = new JButton(&quot;Reset&quot;);</span>
+
+	// Created Attributes
+<span class="nc" id="L54">	private double firstNr = 0.0;</span>
+<span class="nc" id="L55">	private double secondNr = 0.0;</span>
+<span class="nc" id="L56">	private double result = 0.0;</span>
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+<span class="nc" id="L62">		EventQueue.invokeLater(new Runnable() {</span>
+			public void run() {
+				try {
+<span class="nc" id="L65">					MainFrame window = new MainFrame();</span>
+<span class="nc" id="L66">					window.frmMadbarCalculator.setVisible(true);</span>
+<span class="nc" id="L67">				} catch (Exception e) {</span>
+<span class="nc" id="L68">					e.printStackTrace();</span>
+<span class="nc" id="L69">				}</span>
+<span class="nc" id="L70">			}</span>
+		});
+<span class="nc" id="L72">	}</span>
+
+	/**
+	 * Create the application.
+	 */
+<span class="nc" id="L77">	public MainFrame() {</span>
+<span class="nc" id="L78">		textFieldNrToRaise.setFont(new Font(&quot;Tahoma&quot;, Font.PLAIN, 24));</span>
+<span class="nc" id="L79">		textFieldNrToRaise.setHorizontalAlignment(SwingConstants.RIGHT);</span>
+<span class="nc" id="L80">		textFieldNrToRaise.setBounds(83, 166, 188, 28);</span>
+<span class="nc" id="L81">		textFieldNrToRaise.setColumns(10);</span>
+<span class="nc" id="L82">		initialize();</span>
+<span class="nc" id="L83">		addComponents();</span>
+<span class="nc" id="L84">		addActionListeners();</span>
+<span class="nc" id="L85">	}</span>
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		// frmMadbarCalculator = new JFrame();
+
+		// Properties of Frame
+<span class="nc" id="L94">		frmMadbarCalculator.setTitle(&quot;MadBar Calculator&quot;);</span>
+<span class="nc" id="L95">		frmMadbarCalculator.setBounds(100, 100, 365, 385);</span>
+<span class="nc" id="L96">		frmMadbarCalculator.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</span>
+<span class="nc" id="L97">		frmMadbarCalculator.getContentPane().setLayout(null);</span>
+<span class="nc" id="L98">		frmMadbarCalculator.setVisible(true);</span>
+
+		// Properties of Text Fields
+<span class="nc" id="L101">		textFieldResult.setEditable(false);</span>
+<span class="nc" id="L102">		textFieldResult.setBounds(69, 264, 254, 28);</span>
+<span class="nc" id="L103">		textFieldResult.setColumns(10);</span>
+<span class="nc" id="L104">		textField1Nr.setToolTipText(&quot;insert number&quot;);</span>
+<span class="nc" id="L105">		textField1Nr.setHorizontalAlignment(SwingConstants.RIGHT);</span>
+<span class="nc" id="L106">		textField1Nr.setFont(new Font(&quot;Tahoma&quot;, Font.PLAIN, 24));</span>
+<span class="nc" id="L107">		textField1Nr.setBounds(20, 27, 141, 28);</span>
+<span class="nc" id="L108">		textField1Nr.setColumns(10);</span>
+<span class="nc" id="L109">		textField2Nr.setToolTipText(&quot;insert number&quot;);</span>
+<span class="nc" id="L110">		textField2Nr.setHorizontalAlignment(SwingConstants.RIGHT);</span>
+<span class="nc" id="L111">		textField2Nr.setFont(new Font(&quot;Tahoma&quot;, Font.PLAIN, 24));</span>
+<span class="nc" id="L112">		textField2Nr.setColumns(10);</span>
+<span class="nc" id="L113">		textField2Nr.setBounds(171, 27, 147, 28);</span>
+<span class="nc" id="L114">		textFieldResult.setFont(new Font(&quot;Tahoma&quot;, Font.PLAIN, 14));</span>
+
+		// Properties of Labels
+<span class="nc" id="L117">		lblPickNr.setHorizontalAlignment(SwingConstants.CENTER);</span>
+<span class="nc" id="L118">		lblPickNr.setFont(new Font(&quot;Tahoma&quot;, Font.PLAIN, 11));</span>
+<span class="nc" id="L119">		lblPickNr.setBounds(20, 11, 303, 16);</span>
+<span class="nc" id="L120">		lblOperation.setHorizontalAlignment(SwingConstants.CENTER);</span>
+<span class="nc" id="L121">		lblOperation.setBounds(20, 57, 298, 14);</span>
+<span class="nc" id="L122">		lblResult.setBounds(20, 264, 47, 28);</span>
+<span class="nc" id="L123">		lblNrToRaise.setHorizontalAlignment(SwingConstants.CENTER);</span>
+<span class="nc" id="L124">		lblNrToRaise.setBounds(20, 142, 298, 14);</span>
+
+		// Properties of basic buttons
+<span class="nc" id="L127">		btnPlus.setFont(new Font(&quot;Tahoma&quot;, Font.PLAIN, 12));</span>
+<span class="nc" id="L128">		btnPlus.setBounds(258, 75, 65, 40);</span>
+<span class="nc" id="L129">		btnPlus.setMargin(new Insets(1, 1, 1, 1));</span>
+<span class="nc" id="L130">		btnSubt.setFont(new Font(&quot;Tahoma&quot;, Font.PLAIN, 12));</span>
+<span class="nc" id="L131">		btnSubt.setBounds(171, 74, 65, 40);</span>
+<span class="nc" id="L132">		btnSubt.setMargin(new Insets(1, 1, 1, 1));</span>
+<span class="nc" id="L133">		btnDivi.setFont(new Font(&quot;Tahoma&quot;, Font.PLAIN, 12));</span>
+<span class="nc" id="L134">		btnDivi.setBounds(96, 74, 65, 40);</span>
+<span class="nc" id="L135">		btnDivi.setMargin(new Insets(1, 1, 1, 1));</span>
+<span class="nc" id="L136">		btnMult.setFont(new Font(&quot;Tahoma&quot;, Font.PLAIN, 12));</span>
+<span class="nc" id="L137">		btnMult.setBounds(20, 74, 65, 40);</span>
+<span class="nc" id="L138">		btnMult.setMargin(new Insets(1, 1, 1, 1));</span>
+
+		// Properties of advanced buttons
+<span class="nc" id="L141">		btnPow2.setFont(new Font(&quot;Tahoma&quot;, Font.PLAIN, 12));</span>
+<span class="nc" id="L142">		btnPow2.setMargin(new Insets(1, 1, 1, 1));</span>
+<span class="nc" id="L143">		btnPow2.setBounds(20, 213, 40, 40);</span>
+<span class="nc" id="L144">		btnPow3.setFont(new Font(&quot;Tahoma&quot;, Font.PLAIN, 12));</span>
+<span class="nc" id="L145">		btnPow3.setMargin(new Insets(1, 1, 1, 1));</span>
+<span class="nc" id="L146">		btnPow3.setBounds(69, 213, 40, 40);</span>
+<span class="nc" id="L147">		btnPow4.setFont(new Font(&quot;Tahoma&quot;, Font.PLAIN, 12));</span>
+<span class="nc" id="L148">		btnPow4.setBounds(119, 213, 40, 40);</span>
+<span class="nc" id="L149">		btnPow4.setMargin(new Insets(1, 1, 1, 1));</span>
+<span class="nc" id="L150">		btnPow5.setFont(new Font(&quot;Tahoma&quot;, Font.PLAIN, 12));</span>
+<span class="nc" id="L151">		btnPow5.setBounds(181, 213, 40, 40);</span>
+<span class="nc" id="L152">		btnPow5.setMargin(new Insets(1, 1, 1, 1));</span>
+<span class="nc" id="L153">		btnPow6.setFont(new Font(&quot;Tahoma&quot;, Font.PLAIN, 12));</span>
+<span class="nc" id="L154">		btnPow6.setBounds(231, 213, 40, 40);</span>
+<span class="nc" id="L155">		btnPow6.setMargin(new Insets(1, 1, 1, 1));</span>
+<span class="nc" id="L156">		btnPow7.setFont(new Font(&quot;Tahoma&quot;, Font.PLAIN, 12));</span>
+<span class="nc" id="L157">		btnPow7.setBounds(283, 213, 40, 40);</span>
+<span class="nc" id="L158">		btnPow7.setMargin(new Insets(1, 1, 1, 1));</span>
+
+<span class="nc" id="L160">		btnReset.setFont(new Font(&quot;Tahoma&quot;, Font.PLAIN, 12));</span>
+<span class="nc" id="L161">		btnReset.setBounds(20, 303, 303, 32);</span>
+<span class="nc" id="L162">		btnReset.setMargin(new Insets(1, 1, 1, 1));</span>
+
+		// Other
+<span class="nc" id="L165">		separator.setBounds(20, 126, 303, 16);</span>
+<span class="nc" id="L166">	}</span>
+
+	public void addComponents() {
+
+<span class="nc" id="L170">		frmMadbarCalculator.getContentPane().add(textField1Nr);</span>
+<span class="nc" id="L171">		frmMadbarCalculator.getContentPane().add(textField2Nr);</span>
+<span class="nc" id="L172">		frmMadbarCalculator.getContentPane().add(textFieldResult);</span>
+<span class="nc" id="L173">		frmMadbarCalculator.getContentPane().add(textFieldNrToRaise);</span>
+
+<span class="nc" id="L175">		frmMadbarCalculator.getContentPane().add(btnPlus);</span>
+<span class="nc" id="L176">		frmMadbarCalculator.getContentPane().add(btnSubt);</span>
+<span class="nc" id="L177">		frmMadbarCalculator.getContentPane().add(btnDivi);</span>
+<span class="nc" id="L178">		frmMadbarCalculator.getContentPane().add(btnMult);</span>
+
+<span class="nc" id="L180">		frmMadbarCalculator.getContentPane().add(btnPow2);</span>
+<span class="nc" id="L181">		frmMadbarCalculator.getContentPane().add(btnPow3);</span>
+<span class="nc" id="L182">		frmMadbarCalculator.getContentPane().add(btnPow4);</span>
+<span class="nc" id="L183">		frmMadbarCalculator.getContentPane().add(btnPow5);</span>
+<span class="nc" id="L184">		frmMadbarCalculator.getContentPane().add(btnPow6);</span>
+<span class="nc" id="L185">		frmMadbarCalculator.getContentPane().add(btnPow7);</span>
+
+<span class="nc" id="L187">		frmMadbarCalculator.getContentPane().add(btnReset);</span>
+
+<span class="nc" id="L189">		frmMadbarCalculator.getContentPane().add(lblPickNr);</span>
+<span class="nc" id="L190">		frmMadbarCalculator.getContentPane().add(lblOperation);</span>
+<span class="nc" id="L191">		frmMadbarCalculator.getContentPane().add(lblResult);</span>
+<span class="nc" id="L192">		frmMadbarCalculator.getContentPane().add(lblNrToRaise);</span>
+
+<span class="nc" id="L194">		frmMadbarCalculator.getContentPane().add(separator);</span>
+<span class="nc" id="L195">	}</span>
+
+	public void addActionListeners() {
+		// Basic
+<span class="nc" id="L199">		btnPlus.addActionListener(new ActionListener() {</span>
+			public void actionPerformed(ActionEvent arg0) {
+				// System.out.println(&quot;Clickeddd!&quot;);
+				// frmMadbarCalculator.getContentPane().setBackground(Color.red);
+<span class="nc" id="L203">				textFieldResult.setText(&quot;&quot;);</span>
+<span class="nc" id="L204">				textFieldNrToRaise.setText(&quot;&quot;);</span>
+				try {
+<span class="nc" id="L206">					firstNr = Double.parseDouble(textField1Nr.getText());</span>
+<span class="nc" id="L207">					secondNr = Double.parseDouble(textField2Nr.getText());</span>
+<span class="nc" id="L208">					result = cb.add(firstNr, secondNr);</span>
+<span class="nc" id="L209">					textFieldResult.setText(String.valueOf(result));</span>
+<span class="nc" id="L210">				} catch (NumberFormatException e) {</span>
+<span class="nc" id="L211">					System.out.println(&quot;Put in numbers and '.' only! Don't leave empty!&quot;);</span>
+<span class="nc" id="L212">				}</span>
+
+<span class="nc" id="L214">			}</span>
+		});
+<span class="nc" id="L216">		btnSubt.addActionListener(new ActionListener() {</span>
+			public void actionPerformed(ActionEvent e) {
+<span class="nc" id="L218">				textFieldResult.setText(&quot;&quot;);</span>
+<span class="nc" id="L219">				textFieldNrToRaise.setText(&quot;&quot;);</span>
+				try {
+<span class="nc" id="L221">					firstNr = Double.parseDouble(textField1Nr.getText());</span>
+<span class="nc" id="L222">					secondNr = Double.parseDouble(textField2Nr.getText());</span>
+<span class="nc" id="L223">					result = cb.subtract(firstNr, secondNr);</span>
+<span class="nc" id="L224">					textFieldResult.setText(String.valueOf(result));</span>
+<span class="nc" id="L225">				} catch (NumberFormatException nfe) {</span>
+<span class="nc" id="L226">					System.out.println(&quot;Put in numbers and '.' only! Don't leave empty!&quot;);</span>
+<span class="nc" id="L227">				}</span>
+
+<span class="nc" id="L229">			}</span>
+		});
+<span class="nc" id="L231">		btnDivi.addActionListener(new ActionListener() {</span>
+			public void actionPerformed(ActionEvent e) {
+<span class="nc" id="L233">				textFieldResult.setText(&quot;&quot;);</span>
+<span class="nc" id="L234">				textFieldNrToRaise.setText(&quot;&quot;);</span>
+				try {
+<span class="nc" id="L236">					firstNr = Double.parseDouble(textField1Nr.getText());</span>
+<span class="nc" id="L237">					secondNr = Double.parseDouble(textField2Nr.getText());</span>
+<span class="nc" id="L238">					result = cb.divide(firstNr, secondNr);</span>
+<span class="nc" id="L239">					textFieldResult.setText(String.valueOf(result));</span>
+<span class="nc" id="L240">				} catch (NumberFormatException nfe) {</span>
+<span class="nc" id="L241">					System.out.println(&quot;Put in numbers and '.' only! Don't leave empty!&quot;);</span>
+<span class="nc" id="L242">				}</span>
+
+<span class="nc" id="L244">			}</span>
+		});
+<span class="nc" id="L246">		btnMult.addActionListener(new ActionListener() {</span>
+			public void actionPerformed(ActionEvent e) {
+<span class="nc" id="L248">				textFieldResult.setText(&quot;&quot;);</span>
+<span class="nc" id="L249">				textFieldNrToRaise.setText(&quot;&quot;);</span>
+				try {
+<span class="nc" id="L251">					firstNr = Double.parseDouble(textField1Nr.getText());</span>
+<span class="nc" id="L252">					secondNr = Double.parseDouble(textField2Nr.getText());</span>
+<span class="nc" id="L253">					result = cb.multiply(firstNr, secondNr);</span>
+<span class="nc" id="L254">					textFieldResult.setText(String.valueOf(result));</span>
+<span class="nc" id="L255">				} catch (NumberFormatException nfe) {</span>
+<span class="nc" id="L256">					System.out.println(&quot;Put in numbers and '.' only! Don't leave empty!&quot;);</span>
+<span class="nc" id="L257">				}</span>
+
+<span class="nc" id="L259">			}</span>
+		});
+
+		// Advanced
+<span class="nc" id="L263">		btnPow2.addActionListener(new ActionListener() {</span>
+			public void actionPerformed(ActionEvent e) {
+<span class="nc" id="L265">				textField1Nr.setText(&quot;&quot;);</span>
+<span class="nc" id="L266">				textField2Nr.setText(&quot;&quot;);</span>
+
+				try {
+<span class="nc" id="L269">					firstNr = Double.parseDouble(textFieldNrToRaise.getText());</span>
+
+<span class="nc" id="L271">					result = ca.pow2(firstNr);</span>
+<span class="nc" id="L272">					textFieldResult.setText(String.valueOf(result));</span>
+<span class="nc" id="L273">				} catch (NumberFormatException nfe) {</span>
+<span class="nc" id="L274">					System.out.println(&quot;Put in numbers and '.' only! Don't leave empty!&quot;);</span>
+<span class="nc" id="L275">				}</span>
+
+<span class="nc" id="L277">			}</span>
+		});
+<span class="nc" id="L279">		btnPow3.addActionListener(new ActionListener() {</span>
+			public void actionPerformed(ActionEvent e) {
+<span class="nc" id="L281">				textField1Nr.setText(&quot;&quot;);</span>
+<span class="nc" id="L282">				textField2Nr.setText(&quot;&quot;);</span>
+
+				try {
+<span class="nc" id="L285">					firstNr = Double.parseDouble(textFieldNrToRaise.getText());</span>
+
+<span class="nc" id="L287">					result = ca.pow3(firstNr);</span>
+<span class="nc" id="L288">					textFieldResult.setText(String.valueOf(result));</span>
+<span class="nc" id="L289">				} catch (NumberFormatException nfe) {</span>
+<span class="nc" id="L290">					System.out.println(&quot;Put in numbers and '.' only! Don't leave empty!&quot;);</span>
+<span class="nc" id="L291">				}</span>
+
+<span class="nc" id="L293">			}</span>
+		});
+<span class="nc" id="L295">		btnPow4.addActionListener(new ActionListener() {</span>
+			public void actionPerformed(ActionEvent e) {
+<span class="nc" id="L297">				textField1Nr.setText(&quot;&quot;);</span>
+<span class="nc" id="L298">				textField2Nr.setText(&quot;&quot;);</span>
+
+				try {
+<span class="nc" id="L301">					firstNr = Double.parseDouble(textFieldNrToRaise.getText());</span>
+
+<span class="nc" id="L303">					result = ca.pow4(firstNr);</span>
+<span class="nc" id="L304">					textFieldResult.setText(String.valueOf(result));</span>
+<span class="nc" id="L305">				} catch (NumberFormatException nfe) {</span>
+<span class="nc" id="L306">					System.out.println(&quot;Put in numbers and '.' only! Don't leave empty!&quot;);</span>
+<span class="nc" id="L307">				}</span>
+
+<span class="nc" id="L309">			}</span>
+		});
+<span class="nc" id="L311">		btnPow5.addActionListener(new ActionListener() {</span>
+			public void actionPerformed(ActionEvent e) {
+<span class="nc" id="L313">				textField1Nr.setText(&quot;&quot;);</span>
+<span class="nc" id="L314">				textField2Nr.setText(&quot;&quot;);</span>
+				try {
+<span class="nc" id="L316">					firstNr = Double.parseDouble(textFieldNrToRaise.getText());</span>
+
+<span class="nc" id="L318">					result = ca.pow5(firstNr);</span>
+
+<span class="nc" id="L320">					textFieldResult.setText(String.valueOf(result));</span>
+<span class="nc" id="L321">				} catch (NumberFormatException nfe) {</span>
+<span class="nc" id="L322">					System.out.println(&quot;Put in numbers and '.' only! Don't leave empty!&quot;);</span>
+<span class="nc" id="L323">				}</span>
+
+<span class="nc" id="L325">			}</span>
+		});
+<span class="nc" id="L327">		btnPow6.addActionListener(new ActionListener() {</span>
+			public void actionPerformed(ActionEvent e) {
+<span class="nc" id="L329">				textField1Nr.setText(&quot;&quot;);</span>
+<span class="nc" id="L330">				textField2Nr.setText(&quot;&quot;);</span>
+
+				try {
+<span class="nc" id="L333">					firstNr = Double.parseDouble(textFieldNrToRaise.getText());</span>
+
+<span class="nc" id="L335">					result = ca.pow6(firstNr);</span>
+<span class="nc" id="L336">					textFieldResult.setText(String.valueOf(result));</span>
+<span class="nc" id="L337">				} catch (NumberFormatException nfe) {</span>
+<span class="nc" id="L338">					System.out.println(&quot;Put in numbers and '.' only! Don't leave empty!&quot;);</span>
+<span class="nc" id="L339">				}</span>
+<span class="nc" id="L340">			}</span>
+		});
+<span class="nc" id="L342">		btnPow7.addActionListener(new ActionListener() {</span>
+			public void actionPerformed(ActionEvent e) {
+<span class="nc" id="L344">				textField1Nr.setText(&quot;&quot;);</span>
+<span class="nc" id="L345">				textField2Nr.setText(&quot;&quot;);</span>
+
+				try {
+<span class="nc" id="L348">					firstNr = Double.parseDouble(textFieldNrToRaise.getText());</span>
+
+<span class="nc" id="L350">					result = ca.pow7(firstNr);</span>
+<span class="nc" id="L351">					textFieldResult.setText(String.valueOf(result));</span>
+<span class="nc" id="L352">				} catch (NumberFormatException nfe) {</span>
+<span class="nc" id="L353">					System.out.println(&quot;Put in numbers and '.' only! Don't leave empty!&quot;);</span>
+<span class="nc" id="L354">				}</span>
+
+<span class="nc" id="L356">			}</span>
+		});
+
+<span class="nc" id="L359">		btnReset.addActionListener(new ActionListener() {</span>
+			public void actionPerformed(ActionEvent e) {
+<span class="nc" id="L361">				textField1Nr.setText(&quot;&quot;);</span>
+<span class="nc" id="L362">				textField2Nr.setText(&quot;&quot;);</span>
+
+<span class="nc" id="L364">				textField1Nr.setText(&quot;&quot;);</span>
+<span class="nc" id="L365">				textField2Nr.setText(&quot;&quot;);</span>
+<span class="nc" id="L366">				textFieldResult.setText(&quot;&quot;);</span>
+<span class="nc" id="L367">				textFieldNrToRaise.setText(&quot;&quot;);</span>
+<span class="nc" id="L368">			}</span>
+		});
+<span class="nc" id="L370">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.7.201606060606</span></div></body></html>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CalculatorBasic.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">calculator-madeleineb</a> &gt; <a href="index.source.html" class="el_package">com.assignment.calculator_madeleineb</a> &gt; <span class="el_source">CalculatorBasic.java</span></div><h1>CalculatorBasic.java</h1><pre class="source lang-java linenums">package com.assignment.calculator_madeleineb;
+
+<span class="fc" id="L3">public class CalculatorBasic implements CalculatorBasicOperationsInterface {</span>
+
+//	double test = (Double) null;
+//	double test2 = 0;
+
+	public double add(double firstNr, double secondNr) {
+
+		// double result = firstNr + secondNr;
+		// return result;
+//		System.out.println(test + test2);
+<span class="fc" id="L13">		return firstNr + secondNr;</span>
+
+	}
+
+	public double subtract(double firstNr, double secondNr) {
+<span class="fc" id="L18">		return firstNr - secondNr;</span>
+	}
+
+	public double multiply(double firstNr, double secondNr) {
+<span class="fc" id="L22">		return firstNr * secondNr;</span>
+	}
+
+	public double divide(double firstNr, double secondNr) {
+<span class="fc" id="L26">		double roundMethodRes = 0;</span>
+<span class="fc" id="L27">		double result = firstNr / secondNr;</span>
+
+		// Test for next line:
+<span class="fc bfc" id="L30" title="All 2 branches covered.">		if (Double.isInfinite(result)) {</span>
+			// if (Double.isInfinite(result)) {
+
+<span class="fc" id="L33">			System.out.println(&quot;Can't devide by 0&quot;);</span>
+			// result = -100;
+<span class="fc" id="L35">			return -0.123456789;</span>
+		}
+<span class="fc bfc" id="L37" title="All 2 branches covered.">		if (Double.isNaN(result)) {</span>
+			// if (Double.isInfinite(result)) {
+
+<span class="fc" id="L40">			System.out.println(&quot;Can't devide two 0's&quot;);</span>
+			// result = -100;
+<span class="fc" id="L42">			return -0.123456789;</span>
+		}
+
+<span class="fc" id="L45">		return roundMethodRes = Math.round(result * 100.00) / 100.00;</span>
+
+		// roundMethodRes = Math.round(result*100.00)/100.00;
+		// return roundMethodRes;
+
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.7.201606060606</span></div></body></html>
